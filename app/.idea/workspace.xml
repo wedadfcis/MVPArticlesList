@@ -9,48 +9,8 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a890f90d-2169-4d64-a3ec-0466cbbe737b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/mvptask/helper/DateLoader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/mvptask/helper/ImageLoader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/layout/progress_bar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/caches/gradle_models.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/gradle_models.ser" afterDir="false" />
+    <list default="true" id="a890f90d-2169-4d64-a3ec-0466cbbe737b" name="Default Changelist" comment="finish task review">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proguard-rules.pro" beforeDir="false" afterPath="$PROJECT_DIR$/proguard-rules.pro" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/mvptask/base/BaseActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/mvptask/base/BaseActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/mvptask/base/BaseDataManger.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/mvptask/base/BaseFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/mvptask/base/BaseFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/mvptask/base/BaseModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/mvptask/base/BaseModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/mvptask/base/BasePresenter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/mvptask/base/BaseView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/mvptask/base/BaseView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/mvptask/common/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/mvptask/helper/Constants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/mvptask/common/Utilities.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/mvptask/helper/Utilities.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/mvptask/data/DataManger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/mvptask/data/DataManger.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/mvptask/data/model/ArticleResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/mvptask/data/model/ArticleResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/mvptask/data/remote/ApiInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/mvptask/data/remote/ApiInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/mvptask/data/remote/ServiceHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/mvptask/data/remote/ServiceHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/mvptask/view/adapter/ArticleListAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/mvptask/view/ui/articles/list/ArticleListAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/mvptask/view/adapter/ImageAndDateLoader.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/mvptask/view/callback/ArticleClickCallBack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/mvptask/view/ui/articles/list/ArticleClickCallBack.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/mvptask/view/ui/details/ArticleDetailsActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/mvptask/view/ui/articles/details/ArticleDetailsActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/mvptask/view/ui/details/ArticleDetailsFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/mvptask/view/ui/articles/details/ArticleDetailsFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/mvptask/view/ui/details/ArticleDetailsPresenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/mvptask/view/ui/articles/details/ArticleDetailsPresenter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/mvptask/view/ui/details/DetailsContract.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/mvptask/view/ui/articles/details/DetailsContract.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/mvptask/view/ui/list/ArticleListFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/mvptask/view/ui/articles/list/ArticleListFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/mvptask/view/ui/list/ArticlesContract.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/mvptask/view/ui/articles/list/ArticlesContract.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/mvptask/view/ui/list/ArticlesPresenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/mvptask/view/ui/articles/list/ArticlesPresenter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/mvptask/view/ui/list/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/mvptask/view/main/MainActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/drawable/drawer_background.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/drawable/drawer_background.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/layout/activity_article_details.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/activity_article_details.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/layout/app_bar_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/app_bar_main.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/layout/content_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/content_main.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/layout/fragment_article_details.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/fragment_article_details.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/layout/fragment_article_list.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/fragment_article_list.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/layout/item_article.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/item_article.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/layout/nav_header_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/nav_header_main.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/values/drawables.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/values/strings.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -187,7 +147,7 @@
           <entry key="class" value="1" />
           <entry key="gitignore" value="2" />
           <entry key="gradle" value="3" />
-          <entry key="java" value="107" />
+          <entry key="java" value="113" />
           <entry key="pro" value="2" />
           <entry key="ser" value="1" />
           <entry key="xml" value="34" />
@@ -197,7 +157,7 @@
         <counts>
           <entry key="CLASS" value="1" />
           <entry key="Groovy" value="3" />
-          <entry key="JAVA" value="107" />
+          <entry key="JAVA" value="113" />
           <entry key="PLAIN_TEXT" value="3" />
           <entry key="ProGuard File" value="2" />
           <entry key="XML" value="34" />
@@ -208,7 +168,7 @@
           <entry key="gradle" value="3" />
           <entry key="java" value="863" />
           <entry key="pro" value="234" />
-          <entry key="txt" value="124" />
+          <entry key="txt" value="156" />
           <entry key="xml" value="109" />
         </counts>
       </usages-collector>
@@ -216,7 +176,7 @@
         <counts>
           <entry key="Groovy" value="3" />
           <entry key="JAVA" value="863" />
-          <entry key="PLAIN_TEXT" value="124" />
+          <entry key="PLAIN_TEXT" value="156" />
           <entry key="ProGuard File" value="234" />
           <entry key="XML" value="109" />
         </counts>
@@ -225,43 +185,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/example/mvptask/view/ui/articles/list/ArticleListFragment.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="53">
-              <caret line="123" column="49" selection-start-line="123" selection-start-column="49" selection-end-line="123" selection-end-column="49" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#4985#4986#0" expanded="true" />
-                <element signature="e#5042#5043#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/example/mvptask/view/ui/articles/details/ArticleDetailsActivity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="13" selection-start-line="13" selection-end-line="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/example/mvptask/view/ui/articles/details/ArticleDetailsPresenter.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="16" column="24" selection-start-line="16" selection-start-column="24" selection-end-line="16" selection-end-column="24" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/example/mvptask/view/ui/articles/details/DetailsContract.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/example/mvptask/view/ui/articles/list/ArticlesPresenter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="8" column="20" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
+            <state relative-caret-position="164">
+              <caret line="30" column="36" lean-forward="true" selection-start-line="30" selection-start-column="36" selection-end-line="30" selection-end-column="36" />
             </state>
           </provider>
         </entry>
@@ -402,13 +330,6 @@
               <item name="app" type="feadf853:AndroidModuleNode" />
               <item name="java" type="edd41e36:AndroidSourceTypeNode" />
               <item name="mvptask" type="cbb59c9e:AndroidPsiDirectoryNode" />
-              <item name="base" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MVPArticlesList" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="mvptask" type="cbb59c9e:AndroidPsiDirectoryNode" />
               <item name="data" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -432,6 +353,32 @@
               <item name="java" type="edd41e36:AndroidSourceTypeNode" />
               <item name="mvptask" type="cbb59c9e:AndroidPsiDirectoryNode" />
               <item name="view" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MVPArticlesList" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="mvptask" type="cbb59c9e:AndroidPsiDirectoryNode" />
+              <item name="view" type="462c0819:PsiDirectoryNode" />
+              <item name="articles" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MVPArticlesList" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="mvptask" type="cbb59c9e:AndroidPsiDirectoryNode" />
+              <item name="view" type="462c0819:PsiDirectoryNode" />
+              <item name="articles" type="462c0819:PsiDirectoryNode" />
+              <item name="details" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MVPArticlesList" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="mvptask" type="cbb59c9e:AndroidPsiDirectoryNode" />
+              <item name="view" type="462c0819:PsiDirectoryNode" />
+              <item name="articles" type="462c0819:PsiDirectoryNode" />
+              <item name="list" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="MVPArticlesList" type="1abcf292:AndroidViewProjectNode" />
@@ -790,7 +737,14 @@
       <option name="project" value="LOCAL" />
       <updated>1553181905977</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="finish task review">
+      <created>1553438007093</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1553438007093</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TodoView">
@@ -804,10 +758,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Captures" order="0" side_tool="true" weight="0.25" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.28366113" />
+      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.28366113" />
       <window_info id="Structure" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info id="Build Variants" order="4" side_tool="true" />
@@ -817,14 +770,14 @@
       <window_info anchor="bottom" id="Run" order="0" sideWeight="0.5181543" weight="0.3295082" />
       <window_info anchor="bottom" id="Logcat" order="1" weight="0.3295082" />
       <window_info anchor="bottom" id="TODO" order="2" sideWeight="0.49848714" weight="0.3295082" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.4977307" visible="true" weight="0.26885247" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.4977307" weight="0.26885247" />
       <window_info anchor="bottom" id="Terminal" order="4" sideWeight="0.49924356" weight="0.3295082" />
       <window_info anchor="bottom" id="Event Log" order="5" sideWeight="0.20045386" side_tool="true" weight="0.38196722" />
-      <window_info anchor="bottom" id="Version Control" order="6" sideWeight="0.51664144" weight="0.30983606" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="6" sideWeight="0.51664144" visible="true" weight="0.4852459" />
       <window_info anchor="bottom" id="Build" order="7" sideWeight="0.7995461" weight="0.42786884" />
       <window_info anchor="bottom" id="Android Profiler" order="8" />
       <window_info anchor="bottom" id="Find" order="9" />
-      <window_info active="true" anchor="bottom" id="Messages" order="10" sideWeight="0.50832075" visible="true" weight="0.5" />
+      <window_info anchor="bottom" id="Messages" order="10" sideWeight="0.50832075" weight="0.44918033" />
       <window_info anchor="right" x="0" y="0" width="295" height="544" id="Documentation" sideWeight="0.50642204" side_tool="true" weight="0.32980332" />
       <window_info anchor="right" id="Device File Explorer" order="0" side_tool="true" weight="0.32980332" />
       <window_info anchor="right" id="Capture Analysis" order="1" />
@@ -876,7 +829,8 @@
     <MESSAGE value="update .gitignore and appthem" />
     <MESSAGE value="update proguard file to keep model classes and library" />
     <MESSAGE value="remove unused strings and color" />
-    <option name="LAST_COMMIT_MESSAGE" value="remove unused strings and color" />
+    <MESSAGE value="finish task review" />
+    <option name="LAST_COMMIT_MESSAGE" value="finish task review" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1031,13 +985,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/mvptask/base/BaseModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/example/mvptask/data/remote/ServiceHelper.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -1169,30 +1116,6 @@
       </provider>
       <provider editor-type-id="android-designer2" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/mvptask/view/ui/articles/list/ArticlesContract.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="32" selection-start-line="16" selection-start-column="32" selection-end-line="16" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/mvptask/base/BaseView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="16" selection-start-line="6" selection-start-column="16" selection-end-line="6" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/mvptask/view/ui/articles/list/ArticlesPresenter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="223">
-          <caret line="30" column="36" lean-forward="true" selection-start-line="30" selection-start-column="36" selection-end-line="30" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/example/mvptask/data/model/ArticleResponse.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -1233,18 +1156,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/mvptask/view/ui/articles/list/ArticleListFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="53">
-          <caret line="123" column="49" selection-start-line="123" selection-start-column="49" selection-end-line="123" selection-end-column="49" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#4985#4986#0" expanded="true" />
-            <element signature="e#5042#5043#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/res/layout/fragment_article_details.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1190">
@@ -1281,20 +1192,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/mvptask/view/ui/articles/details/ArticleDetailsActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="13" selection-start-line="13" selection-end-line="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/mvptask/view/ui/articles/details/ArticleDetailsPresenter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="16" column="24" selection-start-line="16" selection-start-column="24" selection-end-line="16" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/example/mvptask/helper/DateLoader.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -1312,10 +1209,70 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/mvptask/view/ui/articles/details/ArticleDetailsPresenter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="16" column="24" selection-start-line="16" selection-start-column="24" selection-end-line="16" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/mvptask/view/ui/articles/details/ArticleDetailsActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="158">
+          <caret line="13" selection-start-line="13" selection-end-line="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/mvptask/view/ui/articles/list/ArticleListFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2380">
+          <caret line="157" selection-start-line="157" selection-end-line="157" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#4985#4986#0" expanded="true" />
+            <element signature="e#5042#5043#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/mvptask/base/BaseView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="16" selection-start-line="6" selection-start-column="16" selection-end-line="6" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/mvptask/base/BaseModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/example/mvptask/view/ui/articles/details/DetailsContract.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="8" column="20" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
+        <state relative-caret-position="255">
+          <caret line="16" column="24" lean-forward="true" selection-start-line="16" selection-start-column="24" selection-end-line="16" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/mvptask/view/ui/articles/list/ArticlesContract.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="27" lean-forward="true" selection-start-line="20" selection-start-column="27" selection-end-line="20" selection-end-column="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/mvptask/view/ui/articles/list/ArticlesPresenter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="164">
+          <caret line="30" column="36" lean-forward="true" selection-start-line="30" selection-start-column="36" selection-end-line="30" selection-end-column="36" />
         </state>
       </provider>
     </entry>
