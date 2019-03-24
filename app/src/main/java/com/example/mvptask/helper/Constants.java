@@ -1,4 +1,4 @@
-package com.example.mvptask.common;
+package com.example.mvptask.helper;
 
 public class Constants {
     public class ResponseStatus {
@@ -6,11 +6,13 @@ public class Constants {
     }
 
     public class FragmentTags {
-        public static final String ARTICLE_LIST_TAG = "ArticleListFragment";
+        public static final String ARTICLE_LIST_FRAGMENT_TAG = "ArticleListFragment";
+        public static final String ARTICLE_DETAILS_FRAGMENT_TAG = "ArticleDetails";
     }
 
     public class Extras {
         public static final String ARTICLE = "article";
+        public static final String DETAILS = "articleDetails";
     }
 
     public class ApiConstants {

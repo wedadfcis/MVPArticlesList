@@ -1,17 +1,18 @@
-package com.example.mvptask.view.ui.list;
+package com.example.mvptask.view.ui.articles.list;
 
 import android.content.Context;
 
 import com.example.mvptask.R;
-import com.example.mvptask.common.Utilities;
+import com.example.mvptask.base.BaseModel;
 import com.example.mvptask.data.DataManger;
 import com.example.mvptask.data.model.Article;
 import com.example.mvptask.data.model.ArticleResponse;
+import com.example.mvptask.helper.Utilities;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class ArticlesPresenter implements ArticlesContract.Presenter ,ArticlesContract.PresenterModel {
+public class ArticlesPresenter implements ArticlesContract.Presenter, BaseModel {
 
     private final ArticlesContract.View mArticlesView;
     private Context context;
@@ -21,15 +22,14 @@ public class ArticlesPresenter implements ArticlesContract.Presenter ,ArticlesCo
     public ArticlesPresenter(ArticlesContract.View mArticlesView, Context context) {
         this.mArticlesView = mArticlesView;
         this.context = context;
-        mArticlesView.setPresenter(this);
     }
 
     @Override
-    public void onFetchArticlesFromServer() {
+    public void getArticles() {
         dataManger = new DataManger(this);
         if (Utilities.checkIfApplicationIsConnected(context)) {
-            dataManger.getArticleList(context);
             mArticlesView.showProgressBar();
+            dataManger.getArticleList(context);
         } else {
             mArticlesView.showErrorMessage(context.getResources().getString(R.string.networkErrorCode));
         }
@@ -39,9 +39,9 @@ public class ArticlesPresenter implements ArticlesContract.Presenter ,ArticlesCo
     public void onFilterArticles(String query) {
         List<Article> filteredList = new ArrayList<>();
         filteredList.clear();
-        if(articleList != null) {
+        if (articleList != null) {
             if (!query.isEmpty() || !query.equals("")) {
-                for (Article currentArticle :articleList) {
+                for (Article currentArticle : articleList) {
                     // filter with author name
                     if (currentArticle.getAuthor().toLowerCase().contains(query)) {
                         filteredList.add(currentArticle);
@@ -55,10 +55,6 @@ public class ArticlesPresenter implements ArticlesContract.Presenter ,ArticlesCo
         mArticlesView.displayFilterArticleList(filteredList);
     }
 
-    @Override
-    public void onItemClick(Article article) {
-        mArticlesView.onArticleClick(article);
-    }
 
     @Override
     public <T> void onDataFetched(T Articles) {
@@ -70,7 +66,7 @@ public class ArticlesPresenter implements ArticlesContract.Presenter ,ArticlesCo
         } else {
             mArticlesView.displayArticleList(articleResponse.getArticles());
         }
-        articleList =articleResponse.getArticles();
+        articleList = articleResponse.getArticles();
     }
 
 }

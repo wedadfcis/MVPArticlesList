@@ -1,4 +1,4 @@
-package com.example.mvptask.view.adapter;
+package com.example.mvptask.view.ui.articles.list;
 
 
 import android.content.Context;
@@ -13,7 +13,8 @@ import android.widget.TextView;
 
 import com.example.mvptask.R;
 import com.example.mvptask.data.model.Article;
-import com.example.mvptask.view.callback.ArticleClickCallBack;
+import com.example.mvptask.helper.DateLoader;
+import com.example.mvptask.helper.ImageLoader;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -54,10 +55,10 @@ public class ArticleListAdapter extends RecyclerView.Adapter<ArticleListAdapter.
     @Override
     public void onBindViewHolder(@NonNull ArticleViewHolder holder, int position) {
         Article currentArticle = articleList.get(position);
-        ImageAndDateLoader.loadImage(holder.imgArticle, currentArticle.getUrlToImage());
+        ImageLoader.loadImage(holder.imgArticle, currentArticle.getUrlToImage());
         holder.txtArticleTitle.setText(currentArticle.getTitle());
         holder.txtAuthorName.setText(context.getString(R.string.by) + " " + currentArticle.getAuthor());
-        ImageAndDateLoader.loadDate(holder.txtPublishDate, currentArticle.getPublishedAt());
+        DateLoader.loadDate(holder.txtPublishDate, currentArticle.getPublishedAt());
     }
 
     @Override
@@ -94,7 +95,7 @@ public class ArticleListAdapter extends RecyclerView.Adapter<ArticleListAdapter.
             @Override
             public void onClick(View v) {
                 if (articleClickCallBack != null) {
-                    articleClickCallBack.onClick(articleList.get(getAdapterPosition()));
+                    articleClickCallBack.OnArticleClick(articleList.get(getAdapterPosition()));
                 }
             }
         };

@@ -1,6 +1,10 @@
 package com.example.mvptask.base;
 
-public interface BaseView<T> {
+public interface BaseView {
 
-    public void setPresenter(T presenter);
+    public void showErrorMessage(String message);
+
+    public void showProgressBar();
+
+    public void hidProgressBar();
 }

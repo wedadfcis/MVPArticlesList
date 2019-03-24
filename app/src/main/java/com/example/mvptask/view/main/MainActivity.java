@@ -1,4 +1,4 @@
-package com.example.mvptask.view.ui.list;
+package com.example.mvptask.view.main;
 
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
@@ -9,9 +9,10 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
 import com.example.mvptask.R;
-import com.example.mvptask.common.Constants;
-import com.example.mvptask.common.Utilities;
 import com.example.mvptask.base.BaseActivity;
+import com.example.mvptask.helper.Constants;
+import com.example.mvptask.helper.Utilities;
+import com.example.mvptask.view.ui.articles.list.ArticleListFragment;
 
 
 public class MainActivity extends BaseActivity
@@ -19,16 +20,15 @@ public class MainActivity extends BaseActivity
     private ActionBarDrawerToggle toggle;
     private DrawerLayout drawer;
     private NavigationView navigationView;
-    private ArticlesPresenter articlesPresenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        setToolbar((Toolbar) findViewById(R.id.toolbar),R.color.black,getResources().getString(R.string.app_name),true,true);
+        setToolbar((Toolbar) findViewById(R.id.toolbar), R.color.black, getResources().getString(R.string.app_name), true, true);
         initializeViews();
         setListeners();
-        displayArticleListFragment();
+        addFragment();
     }
 
     @Override
@@ -49,13 +49,12 @@ public class MainActivity extends BaseActivity
 
     }
 
-    private void displayArticleListFragment() {
+    @Override
+    protected void addFragment() {
         /// add fragment
         ArticleListFragment articleListFragment = new ArticleListFragment();
-        articlesPresenter = new ArticlesPresenter(articleListFragment,getApplicationContext());
-        getSupportFragmentManager().beginTransaction().add(R.id.fragment_container, articleListFragment, Constants.FragmentTags.ARTICLE_LIST_TAG).commit();
+        getSupportFragmentManager().beginTransaction().add(R.id.fragment_container, articleListFragment, Constants.FragmentTags.ARTICLE_LIST_FRAGMENT_TAG).commit();
     }
-
 
     @Override
     public void onResume() {

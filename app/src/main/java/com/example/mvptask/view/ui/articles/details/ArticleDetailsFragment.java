@@ -1,4 +1,4 @@
-package com.example.mvptask.view.ui.details;
+package com.example.mvptask.view.ui.articles.details;
 
 import android.content.ActivityNotFoundException;
 import android.content.Context;
@@ -12,13 +12,16 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import com.example.mvptask.R;
-import com.example.mvptask.common.Utilities;
-import com.example.mvptask.data.model.Article;
-import com.example.mvptask.view.adapter.ImageAndDateLoader;
-import com.example.mvptask.base.BaseFragment;
 
-public class ArticleDetailsFragment extends BaseFragment implements com.example.mvptask.view.ui.details.DetailsContract.View {
+import com.example.mvptask.R;
+import com.example.mvptask.base.BaseFragment;
+import com.example.mvptask.data.model.Article;
+import com.example.mvptask.helper.Constants;
+import com.example.mvptask.helper.DateLoader;
+import com.example.mvptask.helper.ImageLoader;
+import com.example.mvptask.helper.Utilities;
+
+public class ArticleDetailsFragment extends BaseFragment implements com.example.mvptask.view.ui.articles.details.DetailsContract.View {
 
     private ImageView imgArticle;
     private TextView txtPublishDate;
@@ -26,7 +29,7 @@ public class ArticleDetailsFragment extends BaseFragment implements com.example.
     private TextView txtAuthorName;
     private TextView txtDescription;
     private Button btnOpenWebsite;
-    private DetailsContract.Presenter detailsContract;
+    private ArticleDetailsPresenter articleDetailsPresenter;
 
     public ArticleDetailsFragment() {
         // Required empty public constructor
@@ -36,6 +39,9 @@ public class ArticleDetailsFragment extends BaseFragment implements com.example.
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        if (getArguments() != null) {
+            articleDetailsPresenter = new ArticleDetailsPresenter((Article) getArguments().getParcelable(Constants.Extras.DETAILS), this);
+        }
     }
 
     @Override
@@ -51,7 +57,7 @@ public class ArticleDetailsFragment extends BaseFragment implements com.example.
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        detailsContract.onArticleSelected();
+        articleDetailsPresenter.loadArticle();
 
     }
 
@@ -67,7 +73,7 @@ public class ArticleDetailsFragment extends BaseFragment implements com.example.
 
     @Override
     protected void initializeViews(View v) {
-        imgArticle =  v.findViewById(R.id.article_image);
+        imgArticle = v.findViewById(R.id.article_image);
         txtPublishDate = (TextView) v.findViewById(R.id.publish_date);
         txtArticleTitle = (TextView) v.findViewById(R.id.article_title);
         txtAuthorName = (TextView) v.findViewById(R.id.author_name);
@@ -77,20 +83,22 @@ public class ArticleDetailsFragment extends BaseFragment implements com.example.
 
     @Override
     protected void setListeners() {
-      btnOpenWebsite.setOnClickListener(openListeners);
+        btnOpenWebsite.setOnClickListener(openListeners);
     }
 
     private View.OnClickListener openListeners = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            detailsContract.onOpenUrl();
+            articleDetailsPresenter.onOpenUrl();
         }
     };
 
     @Override
-    public void onStart(Article article) {
-        ImageAndDateLoader.loadImage(imgArticle,article.getUrlToImage());
-        ImageAndDateLoader.loadDate(txtPublishDate,article.getPublishedAt());
+    public void updateUI(Article article) {
+        if (article.getUrlToImage() != null && !article.getUrlToImage().equals("")) {
+            ImageLoader.loadImage(imgArticle, article.getUrlToImage());
+        }
+        DateLoader.loadDate(txtPublishDate, article.getPublishedAt());
         txtAuthorName.setText(article.getAuthor());
         txtArticleTitle.setText(article.getTitle());
         txtDescription.setText(article.getDescription());
@@ -103,13 +111,23 @@ public class ArticleDetailsFragment extends BaseFragment implements com.example.
             Intent myIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
             startActivity(myIntent);
         } catch (ActivityNotFoundException e) {
-            Utilities.displayToast(getActivity().getString(R.string.fail_open_url),getActivity());
+            Utilities.displayToast(getActivity().getString(R.string.fail_open_url), getActivity());
             e.printStackTrace();
         }
     }
 
     @Override
-    public void setPresenter(com.example.mvptask.view.ui.details.DetailsContract.Presenter presenter) {
-        detailsContract = presenter;
+    public void showErrorMessage(String message) {
+
+    }
+
+    @Override
+    public void showProgressBar() {
+
+    }
+
+    @Override
+    public void hidProgressBar() {
+
     }
 }

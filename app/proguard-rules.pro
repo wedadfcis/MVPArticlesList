@@ -101,7 +101,7 @@
 #--------------------------------------------------------------------------------------------------------------//
 # model class
 -keep public class com.example.mvptask.data.model.* {
-  public protected *;
+  public protected private *;
 }
 
 # The support library contains references to newer platform versions.

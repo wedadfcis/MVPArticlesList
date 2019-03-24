@@ -1,4 +1,4 @@
-package com.example.mvptask.common;
+package com.example.mvptask.helper;
 
 import android.content.Context;
 import android.net.ConnectivityManager;

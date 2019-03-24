@@ -7,11 +7,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-public  abstract class BaseFragment extends Fragment {
+public abstract class BaseFragment extends Fragment {
 
     public BaseFragment() {
         // Required empty public constructor
     }
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,10 +36,8 @@ public  abstract class BaseFragment extends Fragment {
     }
 
     protected abstract void initializeViews(View v);
+
     protected abstract void setListeners();
-
-
-
 
 
 }

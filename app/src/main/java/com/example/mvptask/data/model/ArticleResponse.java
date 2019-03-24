@@ -5,6 +5,15 @@ import java.util.List;
 public class ArticleResponse {
     private List<Article> articles;
     private String message;
+    private String code;
+
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String code) {
+        code = code;
+    }
 
     public String getMessage() {
         return message;

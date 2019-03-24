@@ -1,21 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginTop="@dimen/nav_header_vertical_spacing"
-    xmlns:android="http://schemas.android.com/apk/res/android">
-    <ProgressBar
-        android:id="@+id/loginProgress"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:indeterminateTint="@color/colorPrimary"
-        android:indeterminateTintMode="src_in"
-        android:visibility="gone" />
+    android:layout_marginTop="@dimen/nav_header_vertical_spacing">
+
+    <include layout="@layout/progress_bar" />
 
     <android.support.v7.widget.RecyclerView
-        android:id="@+id/article_list"
+        android:id="@+id/recycler_article"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 </RelativeLayout>

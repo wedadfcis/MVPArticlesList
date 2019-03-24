@@ -1,4 +1,4 @@
-package com.example.mvptask.view.ui.list;
+package com.example.mvptask.view.ui.articles.list;
 
 import android.app.SearchManager;
 import android.content.Context;
@@ -17,26 +17,26 @@ import android.widget.ProgressBar;
 import android.widget.SearchView;
 
 import com.example.mvptask.R;
-import com.example.mvptask.common.Constants;
-import com.example.mvptask.data.model.Article;
-import com.example.mvptask.common.Utilities;
-import com.example.mvptask.view.adapter.ArticleListAdapter;
 import com.example.mvptask.base.BaseFragment;
-import com.example.mvptask.view.callback.ArticleClickCallBack;
-import com.example.mvptask.view.ui.details.ArticleDetailsActivity;
+import com.example.mvptask.data.model.Article;
+import com.example.mvptask.helper.Constants;
+import com.example.mvptask.helper.Utilities;
+import com.example.mvptask.view.ui.articles.details.ArticleDetailsActivity;
 
 import java.util.List;
 
 
-public  class ArticleListFragment extends BaseFragment implements ArticlesContract.View, ArticleClickCallBack {
+public class ArticleListFragment extends BaseFragment implements ArticlesContract.View, ArticleClickCallBack {
     private ArticleListAdapter articleListAdapter;
-    private ProgressBar proLoad;
+    private ProgressBar progressBar;
     private RecyclerView rlArticle;
-    private ArticlesContract.Presenter presenterContract;
+    private ArticlesPresenter articlesPresenter;
+    private SearchView searchView;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setHasOptionsMenu(true);
     }
 
     @Override
@@ -44,7 +44,6 @@ public  class ArticleListFragment extends BaseFragment implements ArticlesContra
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_article_list, container, false);
-        setHasOptionsMenu(true);
         initializeViews(view);
         return view;
     }
@@ -58,7 +57,7 @@ public  class ArticleListFragment extends BaseFragment implements ArticlesContra
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         initializeRecyclerView();
-        startFetchingData();
+        getArticles();
     }
 
     @Override
@@ -74,8 +73,8 @@ public  class ArticleListFragment extends BaseFragment implements ArticlesContra
 
     @Override
     protected void initializeViews(View v) {
-        rlArticle = (RecyclerView) v.findViewById(R.id.article_list);
-        proLoad = (ProgressBar) v.findViewById(R.id.loginProgress);
+        rlArticle = (RecyclerView) v.findViewById(R.id.recycler_article);
+        progressBar = (ProgressBar) v.findViewById(R.id.progress_bar);
     }
 
     @Override
@@ -85,13 +84,13 @@ public  class ArticleListFragment extends BaseFragment implements ArticlesContra
 
     @Override
     public void showProgressBar() {
-        proLoad.setVisibility(View.VISIBLE);
+        progressBar.setVisibility(View.VISIBLE);
     }
 
     @Override
     public void hidProgressBar() {
 
-        proLoad.setVisibility(View.GONE);
+        progressBar.setVisibility(View.GONE);
     }
 
     @Override
@@ -109,14 +108,6 @@ public  class ArticleListFragment extends BaseFragment implements ArticlesContra
         articleListAdapter.setFilter(filterList);
     }
 
-    @Override
-    public void onArticleClick(Article article) {
-        // navigate to article details
-        Intent intent = new Intent(getActivity(), ArticleDetailsActivity.class);
-        intent.putExtra(Constants.Extras.ARTICLE, article);
-        startActivity(intent);
-    }
-
     public void initializeRecyclerView() {
         rlArticle.setLayoutManager(new LinearLayoutManager(getActivity()));
         articleListAdapter = new ArticleListAdapter(this, getActivity());
@@ -124,52 +115,58 @@ public  class ArticleListFragment extends BaseFragment implements ArticlesContra
     }
 
 
-    private void startFetchingData() {
-
-        presenterContract.onFetchArticlesFromServer();
+    private void getArticles() {
+        articlesPresenter = new ArticlesPresenter(this, getActivity());
+        articlesPresenter.getArticles();
     }
 
     @Override
-    public void onClick(Article article) {
-
-        presenterContract.onItemClick(article);
+    public void OnArticleClick(Article article) {
+        // navigate to article details
+        Intent intent = new Intent(getActivity(), ArticleDetailsActivity.class);
+        intent.putExtra(Constants.Extras.ARTICLE, article);
+        startActivity(intent);
 
     }
 
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        search(menu);
+        super.onCreateOptionsMenu(menu, inflater);
+    }
 
+    private void search(Menu menu) {
         if (null == getActivity())
             return;
-        SearchView searchView;
+        initializeSearchView(menu);
+        searchView.setOnQueryTextListener(onQueryTextListener);
+    }
+
+    private SearchView.OnQueryTextListener onQueryTextListener = new SearchView.OnQueryTextListener() {
+        @Override
+        public boolean onQueryTextSubmit(String s) {
+            filterArticles(s);
+            return false;
+        }
+
+        @Override
+        public boolean onQueryTextChange(String s) {
+            filterArticles(s);
+            return false;
+        }
+    };
+
+    private void initializeSearchView(Menu menu) {
         // Associate searchable configuration with the SearchView
         SearchManager searchManager = (SearchManager) getActivity().getSystemService(Context.SEARCH_SERVICE);
         searchView = (SearchView) menu.findItem(R.id.action_search)
                 .getActionView();
         searchView.setSearchableInfo(searchManager
                 .getSearchableInfo(getActivity().getComponentName()));
-        // listening to search query text change
-        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
-            @Override
-            public boolean onQueryTextSubmit(String query) {
-                // filter  when query submitted
-                filterData(query);
-                return false;
-            }
-
-            @Override
-            public boolean onQueryTextChange(String query) {
-                // filter when text is changed
-                filterData(query);
-                return false;
-            }
-        });
-        super.onCreateOptionsMenu(menu, inflater);
     }
 
-    public void filterData(String query) {
-
-        presenterContract.onFilterArticles(query);
+    public void filterArticles(String query) {
+        articlesPresenter.onFilterArticles(query);
     }
 
     @Override
@@ -182,8 +179,5 @@ public  class ArticleListFragment extends BaseFragment implements ArticlesContra
         return super.onOptionsItemSelected(item);
     }
 
-    @Override
-    public void setPresenter(ArticlesContract.Presenter presenter) {
-        presenterContract = presenter;
-    }
+
 }

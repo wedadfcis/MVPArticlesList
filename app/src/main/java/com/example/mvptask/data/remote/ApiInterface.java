@@ -1,7 +1,6 @@
 package com.example.mvptask.data.remote;
 
 
-
 import com.example.mvptask.data.model.ArticleResponse;
 
 import retrofit2.Call;
