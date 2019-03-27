@@ -5,8 +5,9 @@ import android.content.Context;
 import com.example.mvptask.R;
 import com.example.mvptask.base.BaseModel;
 import com.example.mvptask.data.DataManger;
-import com.example.mvptask.data.model.Article;
-import com.example.mvptask.data.model.ArticleResponse;
+import com.example.mvptask.data.model.dto.Article;
+import com.example.mvptask.data.model.dto.ArticleResponse;
+import com.example.mvptask.data.model.Status;
 import com.example.mvptask.helper.Utilities;
 
 import java.util.ArrayList;
@@ -56,17 +57,36 @@ public class ArticlesPresenter implements ArticlesContract.Presenter, BaseModel 
     }
 
 
-    @Override
-    public <T> void onDataFetched(T Articles) {
-        mArticlesView.hidProgressBar();
-        Object o = Articles;
-        ArticleResponse articleResponse = (ArticleResponse) o;
-        if (articleResponse.getArticles() == null) {
-            mArticlesView.showErrorMessage(articleResponse.getMessage());
-        } else {
-            mArticlesView.displayArticleList(articleResponse.getArticles());
+    private void validateArticleResponse(Status<ArticleResponse> articleResponseStatus) {
+
+        switch (articleResponseStatus.getStatusCode()) {
+
+            case SUCCESS:
+                mArticlesView.displayArticleList((List<Article>) articleResponseStatus.getData().getArticles());
+                articleList = (List<Article>) articleResponseStatus.getData().getArticles();
+                break;
+            case ERROR:
+                mArticlesView.showErrorMessage(articleResponseStatus.getMessage());
+                break;
+            case NO_DATA:
+                mArticlesView.showErrorMessage(context.getResources().getString(R.string.no_data));
+                break;
+            case SERVER_ERROR:
+                mArticlesView.showErrorMessage(context.getResources().getString(R.string.error_retrieve));
+                break;
+            default:
+                mArticlesView.showErrorMessage(context.getResources().getString(R.string.something_wrong));
+
+
         }
-        articleList = articleResponse.getArticles();
+    }
+
+    @Override
+    public <T> void onDataFetched(T articles) {
+        mArticlesView.hidProgressBar();
+        Object o = articles;
+        Status<ArticleResponse> articleResponse = (Status<ArticleResponse>) o;
+        validateArticleResponse(articleResponse);
     }
 
 }

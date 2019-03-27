@@ -3,7 +3,9 @@ package com.example.mvptask.data;
 import android.content.Context;
 
 import com.example.mvptask.R;
-import com.example.mvptask.data.model.ArticleResponse;
+import com.example.mvptask.data.model.dto.ArticleResponse;
+import com.example.mvptask.data.model.Status;
+import com.example.mvptask.data.model.StatusCode;
 import com.example.mvptask.data.remote.ServiceHelper;
 import com.example.mvptask.helper.Constants;
 import com.example.mvptask.view.ui.articles.list.ArticlesPresenter;
@@ -24,37 +26,38 @@ public class DataManger {
         this.articlesPresenter = articlesPresenter;
     }
 
-    public ArticleResponse getArticleList(final Context context) {
-        final ArticleResponse articleResponse = new ArticleResponse();
+    public void getArticleList(final Context context) {
+        final Status articleResponseStatus = new Status<>();
         ServiceHelper.getApiService().getProjectList(Constants.ApiConstants.SOURCE, Constants.ApiConstants.API_KEY).enqueue(new Callback<ArticleResponse>() {
 
             @Override
             public void onResponse(Call<ArticleResponse> call, Response<ArticleResponse> response) {
                 if (response.body() != null) {
                     if (response.body().getArticles() != null && response.body().getArticles().size() > 0) {
-                        articleResponse.setArticles(response.body().getArticles());
-                        articleResponse.setMessage(Constants.ResponseStatus.SUCCESS);
-
+                        articleResponseStatus.setData(response.body());
+                        articleResponseStatus.setStatusCode(StatusCode.SUCCESS);
                     } else {
-                        articleResponse.setArticles(null);
-                        articleResponse.setMessage(context.getResources().getString(R.string.no_data));
+                        //no data
+                        articleResponseStatus.setData(null);
+                        articleResponseStatus.setStatusCode(StatusCode.NO_DATA);
                     }
                 } else {
-                    articleResponse.setArticles(null);
-                    articleResponse.setMessage(context.getResources().getString(R.string.error_retrieve));
+                    //server error
+                    articleResponseStatus.setData(null);
+                    articleResponseStatus.setStatusCode(StatusCode.SERVER_ERROR);
                 }
-                articleResponse.setCode(response.body().getCode());
-                articlesPresenter.onDataFetched(articleResponse);
+                articlesPresenter.onDataFetched(articleResponseStatus);
             }
 
             @Override
             public void onFailure(Call<ArticleResponse> call, Throwable t) {
-                articleResponse.setArticles(null);
-                articleResponse.setMessage(getCustomErrorMessage(t, context));
-                articlesPresenter.onDataFetched(articleResponse);
+                //error
+                articleResponseStatus.setData(null);
+                articleResponseStatus.setMessage(getCustomErrorMessage(t, context));
+                articleResponseStatus.setStatusCode(StatusCode.ERROR);
+                articlesPresenter.onDataFetched(articleResponseStatus);
             }
         });
-        return articleResponse;
     }
 
     public String getCustomErrorMessage(Throwable error, Context context) {

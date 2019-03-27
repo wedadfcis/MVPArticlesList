@@ -1,7 +1,7 @@
 package com.example.mvptask.view.ui.articles.details;
 
 import com.example.mvptask.base.BaseView;
-import com.example.mvptask.data.model.Article;
+import com.example.mvptask.data.model.dto.Article;
 
 public interface DetailsContract {
 

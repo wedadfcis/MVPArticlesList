@@ -12,7 +12,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.mvptask.R;
-import com.example.mvptask.data.model.Article;
+import com.example.mvptask.data.model.dto.Article;
 import com.example.mvptask.helper.DateLoader;
 import com.example.mvptask.helper.ImageLoader;
 
@@ -55,7 +55,9 @@ public class ArticleListAdapter extends RecyclerView.Adapter<ArticleListAdapter.
     @Override
     public void onBindViewHolder(@NonNull ArticleViewHolder holder, int position) {
         Article currentArticle = articleList.get(position);
-        ImageLoader.loadImage(holder.imgArticle, currentArticle.getUrlToImage());
+        if (currentArticle.getUrlToImage() != null && !currentArticle.getUrlToImage().equals("")) {
+            ImageLoader.loadImage(holder.imgArticle, currentArticle.getUrlToImage());
+        }
         holder.txtArticleTitle.setText(currentArticle.getTitle());
         holder.txtAuthorName.setText(context.getString(R.string.by) + " " + currentArticle.getAuthor());
         DateLoader.loadDate(holder.txtPublishDate, currentArticle.getPublishedAt());
@@ -84,11 +86,11 @@ public class ArticleListAdapter extends RecyclerView.Adapter<ArticleListAdapter.
         }
 
         private void initViews(View itemView) {
-            imgArticle = (ImageView) itemView.findViewById(R.id.article_image);
-            txtArticleTitle = (TextView) itemView.findViewById(R.id.article_title);
-            txtAuthorName = (TextView) itemView.findViewById(R.id.by);
-            txtPublishDate = (TextView) itemView.findViewById(R.id.publish_date);
-            cardArticle = (CardView) itemView.findViewById(R.id.article_card_view);
+            imgArticle = (ImageView) itemView.findViewById(R.id.imgArticle);
+            txtArticleTitle = (TextView) itemView.findViewById(R.id.txtArticleTitle);
+            txtAuthorName = (TextView) itemView.findViewById(R.id.txtAuthorName);
+            txtPublishDate = (TextView) itemView.findViewById(R.id.txtPublishDate);
+            cardArticle = (CardView) itemView.findViewById(R.id.cardArticle);
         }
 
         private View.OnClickListener viewArticleListener = new View.OnClickListener() {

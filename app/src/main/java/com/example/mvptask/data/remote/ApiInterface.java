@@ -1,7 +1,7 @@
 package com.example.mvptask.data.remote;
 
 
-import com.example.mvptask.data.model.ArticleResponse;
+import com.example.mvptask.data.model.dto.ArticleResponse;
 
 import retrofit2.Call;
 import retrofit2.http.GET;

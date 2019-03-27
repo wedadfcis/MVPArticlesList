@@ -1,4 +1,4 @@
-package com.example.mvptask.data.model;
+package com.example.mvptask.data.model.dto;
 
 import android.os.Parcel;
 import android.os.Parcelable;

@@ -25,10 +25,14 @@ public class MainActivity extends BaseActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        setToolbar((Toolbar) findViewById(R.id.toolbar), R.color.black, getResources().getString(R.string.app_name), true, true);
+        setToolbar((Toolbar) findViewById(R.id.toolbar), R.color.colorPrimary, getResources().getString(R.string.app_name), true, true);
         initializeViews();
         setListeners();
-        addFragment();
+        //replace fragment
+        if (savedInstanceState == null) {
+            ArticleListFragment articleListFragment = new ArticleListFragment();
+            replaceFragment(R.id.fragment_container, articleListFragment, Constants.FragmentTags.ARTICLE_LIST_FRAGMENT_TAG);
+        }
     }
 
     @Override
@@ -49,12 +53,6 @@ public class MainActivity extends BaseActivity
 
     }
 
-    @Override
-    protected void addFragment() {
-        /// add fragment
-        ArticleListFragment articleListFragment = new ArticleListFragment();
-        getSupportFragmentManager().beginTransaction().add(R.id.fragment_container, articleListFragment, Constants.FragmentTags.ARTICLE_LIST_FRAGMENT_TAG).commit();
-    }
 
     @Override
     public void onResume() {

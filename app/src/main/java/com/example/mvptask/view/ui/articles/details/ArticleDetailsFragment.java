@@ -15,7 +15,7 @@ import android.widget.TextView;
 
 import com.example.mvptask.R;
 import com.example.mvptask.base.BaseFragment;
-import com.example.mvptask.data.model.Article;
+import com.example.mvptask.data.model.dto.Article;
 import com.example.mvptask.helper.Constants;
 import com.example.mvptask.helper.DateLoader;
 import com.example.mvptask.helper.ImageLoader;
@@ -73,12 +73,12 @@ public class ArticleDetailsFragment extends BaseFragment implements com.example.
 
     @Override
     protected void initializeViews(View v) {
-        imgArticle = v.findViewById(R.id.article_image);
-        txtPublishDate = (TextView) v.findViewById(R.id.publish_date);
-        txtArticleTitle = (TextView) v.findViewById(R.id.article_title);
-        txtAuthorName = (TextView) v.findViewById(R.id.author_name);
-        txtDescription = (TextView) v.findViewById(R.id.description);
-        btnOpenWebsite = (Button) v.findViewById(R.id.open_website);
+        imgArticle = v.findViewById(R.id.imgArticle);
+        txtPublishDate = (TextView) v.findViewById(R.id.txtPublishDate);
+        txtArticleTitle = (TextView) v.findViewById(R.id.txtArticleTitle);
+        txtAuthorName = (TextView) v.findViewById(R.id.txtAuthorName);
+        txtDescription = (TextView) v.findViewById(R.id.txtDescription);
+        btnOpenWebsite = (Button) v.findViewById(R.id.btnOpenWebsite);
     }
 
     @Override
@@ -107,12 +107,16 @@ public class ArticleDetailsFragment extends BaseFragment implements com.example.
 
     @Override
     public void openWebsiteFromUrl(String url) {
-        try {
-            Intent myIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
-            startActivity(myIntent);
-        } catch (ActivityNotFoundException e) {
-            Utilities.displayToast(getActivity().getString(R.string.fail_open_url), getActivity());
-            e.printStackTrace();
+        if (url != null && !url.equals("")) {
+            try {
+                Intent myIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+                startActivity(myIntent);
+            } catch (ActivityNotFoundException e) {
+                Utilities.displayToast(getActivity().getString(R.string.fail_open_url), getActivity());
+                e.printStackTrace();
+            }
+        } else {
+            Utilities.displayToast(getActivity().getString(R.string.no_url), getActivity());
         }
     }
 

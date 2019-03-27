@@ -1,6 +1,6 @@
 package com.example.mvptask.view.ui.articles.details;
 
-import com.example.mvptask.data.model.Article;
+import com.example.mvptask.data.model.dto.Article;
 
 public class ArticleDetailsPresenter implements DetailsContract.Presenter {
     private Article article;

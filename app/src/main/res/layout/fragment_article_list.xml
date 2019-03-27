@@ -7,7 +7,7 @@
     <include layout="@layout/progress_bar" />
 
     <android.support.v7.widget.RecyclerView
-        android:id="@+id/recycler_article"
+        android:id="@+id/rlArticle"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 </RelativeLayout>

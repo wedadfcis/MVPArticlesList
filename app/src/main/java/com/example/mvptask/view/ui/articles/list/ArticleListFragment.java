@@ -18,7 +18,7 @@ import android.widget.SearchView;
 
 import com.example.mvptask.R;
 import com.example.mvptask.base.BaseFragment;
-import com.example.mvptask.data.model.Article;
+import com.example.mvptask.data.model.dto.Article;
 import com.example.mvptask.helper.Constants;
 import com.example.mvptask.helper.Utilities;
 import com.example.mvptask.view.ui.articles.details.ArticleDetailsActivity;
@@ -73,8 +73,8 @@ public class ArticleListFragment extends BaseFragment implements ArticlesContrac
 
     @Override
     protected void initializeViews(View v) {
-        rlArticle = (RecyclerView) v.findViewById(R.id.recycler_article);
-        progressBar = (ProgressBar) v.findViewById(R.id.progress_bar);
+        rlArticle = (RecyclerView) v.findViewById(R.id.rlArticle);
+        progressBar = (ProgressBar) v.findViewById(R.id.progressBar);
     }
 
     @Override
@@ -108,14 +108,20 @@ public class ArticleListFragment extends BaseFragment implements ArticlesContrac
         articleListAdapter.setFilter(filterList);
     }
 
-    public void initializeRecyclerView() {
+    private void initializeRecyclerView() {
         rlArticle.setLayoutManager(new LinearLayoutManager(getActivity()));
         articleListAdapter = new ArticleListAdapter(this, getActivity());
         rlArticle.setAdapter(articleListAdapter);
     }
 
 
-    private void getArticles() {
+    @Override
+    public void filterArticles(String query) {
+        articlesPresenter.onFilterArticles(query);
+    }
+
+    @Override
+    public void getArticles() {
         articlesPresenter = new ArticlesPresenter(this, getActivity());
         articlesPresenter.getArticles();
     }
@@ -140,7 +146,18 @@ public class ArticleListFragment extends BaseFragment implements ArticlesContrac
             return;
         initializeSearchView(menu);
         searchView.setOnQueryTextListener(onQueryTextListener);
+
     }
+
+    private void initializeSearchView(Menu menu) {
+        // Associate searchable configuration with the SearchView
+        SearchManager searchManager = (SearchManager) getActivity().getSystemService(Context.SEARCH_SERVICE);
+        searchView = (SearchView) menu.findItem(R.id.action_search)
+                .getActionView();
+        searchView.setSearchableInfo(searchManager
+                .getSearchableInfo(getActivity().getComponentName()));
+    }
+
 
     private SearchView.OnQueryTextListener onQueryTextListener = new SearchView.OnQueryTextListener() {
         @Override
@@ -156,18 +173,6 @@ public class ArticleListFragment extends BaseFragment implements ArticlesContrac
         }
     };
 
-    private void initializeSearchView(Menu menu) {
-        // Associate searchable configuration with the SearchView
-        SearchManager searchManager = (SearchManager) getActivity().getSystemService(Context.SEARCH_SERVICE);
-        searchView = (SearchView) menu.findItem(R.id.action_search)
-                .getActionView();
-        searchView.setSearchableInfo(searchManager
-                .getSearchableInfo(getActivity().getComponentName()));
-    }
-
-    public void filterArticles(String query) {
-        articlesPresenter.onFilterArticles(query);
-    }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {

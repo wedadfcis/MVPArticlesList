@@ -7,7 +7,7 @@ import android.view.MenuItem;
 
 import com.example.mvptask.R;
 import com.example.mvptask.base.BaseActivity;
-import com.example.mvptask.data.model.Article;
+import com.example.mvptask.data.model.dto.Article;
 import com.example.mvptask.helper.Constants;
 
 public class ArticleDetailsActivity extends BaseActivity {
@@ -16,8 +16,10 @@ public class ArticleDetailsActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_article_details);
-        setToolbar((Toolbar) findViewById(R.id.toolbar), R.color.black, getResources().getString(R.string.app_name), true, true);
-        addFragment();
+        setToolbar((Toolbar) findViewById(R.id.toolbar), R.color.colorPrimary, getResources().getString(R.string.app_name), true, true);
+        if (savedInstanceState == null) {
+            initFragment();
+        }
     }
 
 
@@ -31,14 +33,13 @@ public class ArticleDetailsActivity extends BaseActivity {
 
     }
 
-    @Override
-    protected void addFragment() {
+    private void initFragment() {
         if (getIntent().getExtras().getParcelable(Constants.Extras.ARTICLE) != null) {
             ArticleDetailsFragment articleDetailsFragment = new ArticleDetailsFragment();
             Bundle bundle = new Bundle();
             bundle.putParcelable(Constants.Extras.DETAILS, (Article) getIntent().getExtras().getParcelable(Constants.Extras.ARTICLE));
             articleDetailsFragment.setArguments(bundle);
-            getSupportFragmentManager().beginTransaction().add(R.id.fragment_container, articleDetailsFragment, Constants.FragmentTags.ARTICLE_DETAILS_FRAGMENT_TAG).commit();
+            replaceFragment(R.id.fragment_container, articleDetailsFragment, Constants.FragmentTags.ARTICLE_DETAILS_FRAGMENT_TAG);
         }
     }
 

@@ -1,6 +1,7 @@
 package com.example.mvptask.base;
 
 import android.os.Build;
+import android.support.v4.app.Fragment;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
@@ -31,6 +32,12 @@ public abstract class BaseActivity extends AppCompatActivity {
         }
     }
 
+    protected void replaceFragment(int containerId, Fragment fragment, String tag) {
+        getSupportFragmentManager().beginTransaction()
+                .replace(containerId, fragment, tag)
+                .commit();
+    }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -55,5 +62,5 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     protected abstract void setListeners();
 
-    protected abstract void addFragment();
+
 }

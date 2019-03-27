@@ -21,4 +21,6 @@
     <string name="fail_open_url">fail_to_open_url</string>
     <string name="error_retrieve">Error in retrieve data from server </string>
     <string name="no_data">Data no\'t found</string>
+    <string name="no_url">url is empty</string>
+    <string name="something_wrong">something wrong happen</string>
 </resources>
