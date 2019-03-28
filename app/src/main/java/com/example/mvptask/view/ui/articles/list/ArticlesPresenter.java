@@ -5,9 +5,9 @@ import android.content.Context;
 import com.example.mvptask.R;
 import com.example.mvptask.base.BaseModel;
 import com.example.mvptask.data.DataManger;
+import com.example.mvptask.data.model.Status;
 import com.example.mvptask.data.model.dto.Article;
 import com.example.mvptask.data.model.dto.ArticleResponse;
-import com.example.mvptask.data.model.Status;
 import com.example.mvptask.helper.Utilities;
 
 import java.util.ArrayList;
@@ -57,7 +57,8 @@ public class ArticlesPresenter implements ArticlesContract.Presenter, BaseModel 
     }
 
 
-    private void validateArticleResponse(Status<ArticleResponse> articleResponseStatus) {
+    @Override
+    public void validateArticleResponse(Status<ArticleResponse> articleResponseStatus) {
 
         switch (articleResponseStatus.getStatusCode()) {
 

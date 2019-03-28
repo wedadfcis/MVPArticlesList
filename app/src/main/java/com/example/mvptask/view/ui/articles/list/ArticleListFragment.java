@@ -108,7 +108,8 @@ public class ArticleListFragment extends BaseFragment implements ArticlesContrac
         articleListAdapter.setFilter(filterList);
     }
 
-    private void initializeRecyclerView() {
+    @Override
+    public void initializeRecyclerView() {
         rlArticle.setLayoutManager(new LinearLayoutManager(getActivity()));
         articleListAdapter = new ArticleListAdapter(this, getActivity());
         rlArticle.setAdapter(articleListAdapter);
@@ -141,7 +142,8 @@ public class ArticleListFragment extends BaseFragment implements ArticlesContrac
         super.onCreateOptionsMenu(menu, inflater);
     }
 
-    private void search(Menu menu) {
+    @Override
+    public void search(Menu menu) {
         if (null == getActivity())
             return;
         initializeSearchView(menu);
@@ -149,7 +151,8 @@ public class ArticleListFragment extends BaseFragment implements ArticlesContrac
 
     }
 
-    private void initializeSearchView(Menu menu) {
+    @Override
+    public void initializeSearchView(Menu menu) {
         // Associate searchable configuration with the SearchView
         SearchManager searchManager = (SearchManager) getActivity().getSystemService(Context.SEARCH_SERVICE);
         searchView = (SearchView) menu.findItem(R.id.action_search)
