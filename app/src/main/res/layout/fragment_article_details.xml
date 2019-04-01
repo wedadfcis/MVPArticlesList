@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollbars="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/activity_vertical_margin">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/imgArticle"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/image_height"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginBottom="@dimen/activity_vertical_margin"
+                    android:scaleType="centerCrop" />
+
+                <TextView
+                    android:id="@+id/txtPublishDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@+id/txtArticleTitle"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="@dimen/small_margin"
+                    android:layout_marginBottom="@dimen/date_margin"
+                    android:textColor="@color/white" />
+
+                <TextView
+                    android:id="@+id/txtArticleTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/imgArticle"
+                    android:layout_marginStart="@dimen/small_margin"
+                    android:layout_marginEnd="@dimen/small_margin"
+                    android:layout_marginBottom="@dimen/small_margin"
+                    android:textColor="@color/dark_gray"
+                    android:textSize="@dimen/large_txt_size" />
+
+                <TextView
+                    android:id="@+id/txtAuthorName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/txtArticleTitle"
+                    android:layout_marginStart="@dimen/nav_header_vertical_spacing"
+                    android:layout_marginBottom="@dimen/small_margin"
+                    android:textSize="@dimen/small_txt_size" />
+
+                <TextView
+                    android:id="@+id/txtDescription"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/txtAuthorName"
+                    android:layout_marginStart="@dimen/nav_header_vertical_spacing"
+                    android:layout_marginBottom="@dimen/activity_vertical_margin"
+                    android:textSize="@dimen/small_txt_size" />
+            </RelativeLayout>
+        </android.support.v7.widget.CardView>
+
+        <Button
+            android:id="@+id/btnOpenWebsite"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/activity_horizontal_margin"
+            android:background="@android:color/black"
+            android:text="@string/open_website"
+            android:textColor="@color/white" />
+    </LinearLayout>
+</ScrollView>
